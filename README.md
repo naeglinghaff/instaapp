@@ -41,7 +41,7 @@ I'd like to be able to edit or delete my own posts.
 | Models        | Methods          | State  |
 | ------------- |:-------------:| -----:|
 | Users    | sign-up, sign-in, log-out , CRUD | email, username, password |
-| Posts     | CRUD     |   likes, assosciated user |
+| Posts     | CRUD     |   likes, associated user, caption |
 | Comments | CRUD      |    likes, associated user and post |
 
 ## Task
