@@ -5,7 +5,7 @@ ruby '2.6.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.2', '>= 6.0.2.2'
-
+# postgres gem for database management
 gem 'pg'
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
@@ -24,6 +24,12 @@ gem 'jbuilder', '~> 2.7'
 gem 'devise', '~> 4.2'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
+
+# importing bootstrap styling
+gem 'bootstrap', '~> 4.4.1'
+
+# jquery for styling
+gem 'jquery-rails'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
