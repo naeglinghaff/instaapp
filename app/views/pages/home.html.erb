@@ -1,5 +1,13 @@
-<h1>Welcome</h1>
+<div class="container">
+  <h1>Welcome</h1>
 
-<%= link_to 'Sign up', new_user_registration_path %>
-<%= link_to 'Sign in', new_user_session_path %>
-<%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
+  <div class="container">
+    <%= link_to 'Sign up', new_user_registration_path %>
+  </div>
+  <div class="container">
+    <%= link_to 'Sign in', new_user_session_path %>
+  </div>
+    <div class="container">
+    <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
+  </div>
+</div>
