@@ -45,6 +45,11 @@ I'd like to be able to post an image.
 As a user,
 so I can contribute to the website,
 I'd like to be able to edit or delete my own posts.
+
+I'd like to be able to view my own profile
+
+I'd like to be able to edit my profile
+
 ```
 
 ## Domain Model
