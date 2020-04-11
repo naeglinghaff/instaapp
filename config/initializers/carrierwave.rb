@@ -1,13 +1,27 @@
 CarrierWave.configure do |config|
+
+  # Use local storage if in development or test
+  if Rails.env.development? || Rails.env.test?
+    CarrierWave.configure do |config|
+      config.storage = :file
+    end
+  end
+
+  # Use AWS storage if in production
+  if Rails.env.production?
+    CarrierWave.configure do |config|
+      config.storage = :fog
+    end
+  end
+
   config.fog_credentials = {
-    provider:              'AWS',
-    aws_access_key_id:     ENV['AWS_ACCESS_KEY_ID'],
-    aws_secret_access_key: ENV['AWD_SECRET_ACCESS_KEY'],                        
+    :provider               => 'AWS',                             # required
+    :aws_access_key_id      => ENV['AWS_ACCESS_KEY_ID'],            # required
+    :aws_secret_access_key  => ENV['AWS_SECRET_ACCESS_KEY'],
+    :region                 => 'eu-west-2'                        # optional, defaults to 'us-east-1'
   }
-  config.storage = :fog
-  config.permissions = 0666
-  config.cache_dir = "#{Rails.root}/tmp/"
-  config.fog_directory = ENV['FOG_DIRECTORY']
-  config.fog_public = false
-  config.fog_attributes = { cache_control: "public, max-age=#{365.days.to_i}" }
+  config.fog_directory  = ENV['FOG_DIRECTORY']               # required
+  #config.fog_host       = 'https://assets.example.com'           # optional, defaults to nil
+  #config.fog_public     = false                                  # optional, defaults to true
+  config.fog_attributes = {'Cache-Control'=>'max-age=315576000'}  # optional, defaults to {}
 end
