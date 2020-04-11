@@ -16,6 +16,22 @@ require 'simplecov'
 require 'simplecov-console'
 require_relative './support/helpers.rb'
 
+SimpleCov.start 'rails' do
+  add_filter '/bin/'
+  add_filter '/db/'
+  add_filter '/spec/' # for rspec
+  add_filter '/test/' # for minitest
+  add_filter '/app/jobs' # for rails files
+  add_filter '/app/mailers'
+  add_filter '/app/channels'
+end
+SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
+                                                                 SimpleCov::Formatter::Console
+                                                                 # Want a nice code coverage website? Uncomment this next line!
+                                                                 # SimpleCov::Formatter::HTMLFormatter
+                                                               ])
+
+
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
