@@ -3,6 +3,17 @@ Instagram Challenge
 
 ## To run code
 
+```
+bundle
+rails db:create
+rails db:migrate
+rails server
+```
+To add jquery and bootstrap I added them via yarn:
+```
+yarn add bootstrap jquery popper.js
+```
+
 ## To run tests
 
 
