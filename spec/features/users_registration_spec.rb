@@ -7,7 +7,7 @@ RSpec.feature 'Sign up', type: :feature do
     expect(page).to have_content("Welcome! You have signed up successfully.")
   end
 
-  xscenario 'Redirection if not signed in' do
+  scenario 'Redirection if not signed in' do
     visit '/'
     expect(current_path).not_to eq '/'
     expect(current_path).to eq '/users/sign_in'

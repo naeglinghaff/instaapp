@@ -4,7 +4,7 @@ RSpec.feature 'Log in', type: :feature do
   scenario 'users can create an account' do
     sign_up
     click_link 'Sign out'
-    expect(current_path).to eq '/'
+    expect(current_path).to eq '/users/sign_in'
     log_in
     expect(current_path).to eq '/'
     expect(page).to have_content("Signed in successfully.")

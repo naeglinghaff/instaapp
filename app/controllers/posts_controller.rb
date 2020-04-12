@@ -15,6 +15,10 @@ class PostsController < ApplicationController
     end
   end
 
+  def index
+    @posts = Post.order(:created_at).reverse_order
+  end
+
   private
   def post_params
     params.require(:post).permit(:image, :image_cache)

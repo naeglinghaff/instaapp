@@ -1,0 +1,21 @@
+<div class="container">
+  <h1>InstaApp</h1>
+
+    <div class="container">
+      <% if current_user %>
+        <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
+        <%= link_to 'Dashboard', dashboard_url %>
+        <%= link_to 'Create post', new_post_path %>
+        <% end %>
+        <div class="container">
+          <div class="row">
+            <div class="col-8">
+              <% @posts.each do |post| %>
+              <div><%= post.user.username unless post.user.blank? %></div>
+                <%= image_tag post.image.url, class: "img img-fluid" %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>
