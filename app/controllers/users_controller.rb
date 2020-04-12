@@ -2,12 +2,12 @@ class UsersController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    #user feed - fetches active posts 
+    # user feed - fetches active posts 
     @posts = Post.active
   end
 
   def show
-    #user profile
+    # user profile
   end
 
 end

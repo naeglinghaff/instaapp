@@ -10,7 +10,7 @@ RSpec.describe Post, type: :model do
 
   describe 'before action' do
     it 'can change to default active status' do
-      expect{ Post.new }.to change{ Post.active }
+      expect { Post.new }.to change { Post.active }
     end
   end
 end

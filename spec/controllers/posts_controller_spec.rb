@@ -2,11 +2,11 @@ require 'rails_helper'
 
 RSpec.describe PostsController, type: :controller do
 
-before(:each) do
-  user = double('user')
-  allow(request.env['warden']).to receive(:authenticate!).and_return(user)
-  allow(controller).to receive(:current_user).and_return(user)
-end
+  before(:each) do
+    user = double('user')
+    allow(request.env['warden']).to receive(:authenticate!).and_return(user)
+    allow(controller).to receive(:current_user).and_return(user)
+  end
 
   describe 'new post routes' do
     it 'routes a new post' do
@@ -15,7 +15,7 @@ end
     end
 
     it 'creates a new post' do
-      post :new, params: { post: {image: "http:image.com"} }
+      post :new, params: { post: { image: "http:image.com" } }
       expect(response).to have_http_status(200)
     end
   end
