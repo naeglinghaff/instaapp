@@ -11,6 +11,8 @@
     <div class="container">
       <% if current_user %>
     <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
+    <%= link_to 'Posts', posts_path  %>
       <%end%>
+
   </div>
 </div>
