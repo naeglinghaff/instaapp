@@ -1,6 +1,14 @@
+require 'rails_helper'
+
 RSpec.describe PostsController, type: :controller do
 
-  describe 'creates new post' do
+before(:each) do
+  user = double('user')
+  allow(request.env['warden']).to receive(:authenticate!).and_return(user)
+  allow(controller).to receive(:current_user).and_return(user)
+end
+
+  describe 'new post routes' do
     it 'routes a new post' do
       get :new
       expect(response).to have_http_status(200)
@@ -8,22 +16,14 @@ RSpec.describe PostsController, type: :controller do
 
     it 'creates a new post' do
       post :new, params: { post: {image: "http:image.com"} }
-      expect(response).to redirect_to()
+      expect(response).to have_http_status(200)
     end
   end
 
   describe 'shows posts' do
-    it 'responds with 200' do
-      get :show
-      expect(response).to have_http_status(200)
-    end
-  end
-
-  describe 'root to home' do
-    it 'responds with 200' do
+    it 'roots to index' do
       get :index
       expect(response).to have_http_status(200)
     end
   end
-
 end
