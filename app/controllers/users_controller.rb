@@ -2,7 +2,8 @@ class UsersController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    #user feed
+    #user feed - fetches active posts 
+    @posts = Post.active
   end
 
   def show
