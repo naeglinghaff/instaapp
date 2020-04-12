@@ -1,13 +1,16 @@
 require 'rails_helper'
 
 RSpec.describe Post, type: :model do
+
   subject { described_class.new }
 
-  it "is valid with valid attributes" do
-    post = Post.new(image: "url.com", active: true, user_id: 1)
-    subject.image = String
-    subject.user_id = 1
-    expect(subject).to be_valid
+  describe 'associations' do
+    it { should belong_to(:user).class_name('User') }
   end
 
+  describe 'before action' do
+    it 'can change to default active status' do
+      expect{ Post.new }.to change{ Post.active }
+    end
+  end
 end

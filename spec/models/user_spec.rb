@@ -17,4 +17,8 @@ RSpec.describe User, type: :model do
     user = User.new(email: "fake@email.com", password: "fakepassword")
     expect(user).to_not be_valid
   end
+
+  describe 'associations' do
+    it { should have_many(:posts) }
+  end
 end
