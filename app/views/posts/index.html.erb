@@ -7,6 +7,10 @@
           <%= link_to post.user.username, profile_path(post.user.username), class: "text-dark" %>
         </div>
         <%= image_tag post.image.url, class: "img img-fluid" %>
+
+        <div class="post-details">
+          <%= simple_format post.description %>
+          </div>
         <% end %>
         </div>
           <div class="col-4">
