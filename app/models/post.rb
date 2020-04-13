@@ -8,10 +8,6 @@ class Post < ApplicationRecord
 # allows only the active posts to be viewed
   scope :active, -> { where active: true }
 
-  def total_likes
-    0
-  end
-
 private
 
   def set_active
