@@ -5,7 +5,7 @@ $(function(){
     // ajax call with the id as a parameter
     $.ajax({
       url: "/post/like/"+post_id,
-      method: "GET",
+      method: "GET"
     }).done(function(response) {
         console.log(response);
       })

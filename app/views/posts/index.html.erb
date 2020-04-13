@@ -11,7 +11,7 @@
 
         <div class="post-details">
           <div class="post-actions">
-            <i class="fas fa-heart fa-2x post-like" data-id="<%= post.id %>"></i>
+            <i class="fas fa-heart like-<%= post.id %> <%= 'active' if liked_by_user?(post.id) %> fa-2x post-like" data-id="<%= post.id %>"></i>
             <i class="fas fa-comment fa-2x post-comment"></i>
           </div>
 
