@@ -15,33 +15,23 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <div class="container">
-    <ul class="nav nav-tabs">
-      <li class="nav-item">
-        <%= link_to 'Home', posts_url, class: "nav-link" %>
-      </li>
-      <li class="nav-item">
-        <%= link_to 'My profile', dashboard_url, class: "nav-link" %>
-      </li>
-      <li class="nav-item">
-        <%= link_to 'Create post', new_post_path, class: "nav-link" %>
-      </li>
-      <li class="nav-item">
-        <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: "nav-link" %>
-      </li>
-    </ul>
 
-  <!-- Tab panes -->
-    <div class="tab-content">
-      <div class="tab-pane container fade" id="Home">Home</div>
-      <div class="tab-pane container fade" id="My profile">My profile</div>
-      <div class="tab-pane container fade" id="New post">New post</div>
-      <div class="tab-pane container fade" id="Sign out">Sign out</div>
+
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/">InstaApp</a>
+      </div>
+        <ul class="nav navbar-nav">
+          <li class="active"><%= link_to 'Home', posts_url, class: "nav-link" %></li>
+          <li><%= link_to 'My profile', dashboard_url, class: "nav-link" %></li>
+          <li><%= link_to 'Create post', new_post_path, class: "nav-link" %></li>
+          <li><%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: "nav-link" %></li>
+        </ul>
     </div>
-  </div>
+  </nav>
 
   <div class="container" align="center">
-    <h1>InstaApp</h1>
     <body>
       <%= render 'layouts/alerts' %>
       <%= yield %>
