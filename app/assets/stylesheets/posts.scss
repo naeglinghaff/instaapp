@@ -33,6 +33,21 @@
   text-align: left;
 }
 
+.post-actions {
+  margin-bottom: 10px;
+  i {
+    margin-right: 10px;
+    color: #ddd;
+    cursor: pointer;
+  }
+  i:hover {
+    color:#999;
+  }
+  i.active {
+    color: #555;
+  }
+}
+
 body {
   background: #fafafa;
 }
