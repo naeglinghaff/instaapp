@@ -55,7 +55,8 @@ Several features were spiked.
 
 ## Mockup
 
-![Profile Desktop Page][profile.png]
+![Profile Desktop Page](./profile.png)
+
 
 ## User Stories
 
