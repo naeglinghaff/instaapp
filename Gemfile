@@ -50,6 +50,8 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   # env manager for api keys
   gem 'figaro'
+  #for icons
+  gem 'font-awesome-sass', '~> 5.12.0'
 end
 
 group :test do

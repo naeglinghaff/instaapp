@@ -6,16 +6,24 @@
           <%= image_tag post.user.image.thumb.url, class: "img-circle" unless post.user.image.blank? %>
           <%= link_to post.user.username, profile_path(post.user.username), class: "text-dark" %>
         </div>
+
         <%= image_tag post.image.url, class: "img img-fluid" %>
+
+        <div class"post-actions">
+          <i class="fas fa-heart fa-2x post-like"></i>
+          <i class="fas fa-comment fa-2x post-comment"></i>
+        </div>
 
         <div class="post-details">
           <p><strong> <%= post.total_likes %> likes </strong></p>
           <p><strong> <%= link_to post.user.username, profile_path(post.user.username), class: "text-dark" %> </strong></p>
           <%= simple_format post.description %>
           <p class="text-muted"><%= time_ago_in_words post.created_at %> ago</p>
-          </div>
+        </div>
+
         <% end %>
         </div>
+
           <div class="col-4">
             <div class="user-profile">
               <p><%= image_tag current_user.image.thumb.url, class: "img-circle" unless current_user.image.blank? %>
