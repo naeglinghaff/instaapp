@@ -1,10 +1,24 @@
+<div class="container">
+  <div class="row">
+    <div class="col-4">
+    </div>
+    <div class="col-8 text-left">
+      <h2> <%= current_user.username %> </h2>
+      <p> <%= current_user.posts.count %> posts</p>
+      <p>  followers</p>
+      <p>  following </p>
+    </div>
+  </div>
+</div>
+
 <div class="container" align="center">
   <div class="row">
-    <div class="col-8">
       <% @posts.each do |post| %>
-      <div class="posts-meta"><%= post.user.username unless post.user.blank? %></div>
+      <div class="col-4">
+        <div class="post-meta">
         <%= image_tag post.image.url, class: "img img-fluid" %>
+        </div>
+      </div>
       <% end %>
-    </div>
   </div>
 </div>
