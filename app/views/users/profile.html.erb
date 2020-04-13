@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-4">
-      <%= image_tag @user.image.url, width: "200px", class: "img-circle" %>
+      <%= image_tag @user.image.url, width: "200px", class: "img-circle" unless @user.image.url.blank?%>
     </div>
     <div class="col-8 text-left">
       <h2> <%= @user.username %> </h2>

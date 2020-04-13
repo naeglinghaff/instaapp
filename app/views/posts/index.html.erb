@@ -4,7 +4,7 @@
         <% @posts.each do |post| %>
         <div class="posts-meta">
           <%= image_tag post.user.image.thumb.url, class: "img-circle" unless post.user.image.blank? %>
-          <%= link_to post.user.username, profile_path(post.user.username) %>
+          <%= link_to post.user.username, profile_path(post.user.username), class: "text-dark" %>
         </div>
         <%= image_tag post.image.url, class: "img img-fluid" %>
         <% end %>
