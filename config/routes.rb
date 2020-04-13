@@ -4,8 +4,7 @@ Rails.application.routes.draw do
   # homepage route
   root to: "posts#index"
 
-  # dashboard for account
-  get "/dashboard" => "users#index"
+  get "profile/:username" => "users#profile", as: :profile
 
   # routes for post methods
   resources :posts, only: [:index, :new, :create, :show]

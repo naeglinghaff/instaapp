@@ -1,9 +1,10 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
+  before_action :set_user, only:[:profile]
 
-  def index
-    #user profile display
-    user_id = current_user.id
+  def profile
+    # show a users profile
+    user_id = User.find_by_username(params[:username]).id
     @posts = Post.where(user_id: user_id)
   end
 
@@ -13,5 +14,11 @@ class UsersController < ApplicationController
 
   def total_following
     0
+  end
+
+  private
+
+  def set_user
+    @user = User.find_by_username(params[:username])
   end
 end
