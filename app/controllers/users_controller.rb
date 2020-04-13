@@ -3,7 +3,8 @@ class UsersController < ApplicationController
 
   def index
     #user feed dashboards
-    @posts = Post.active
+    user_id = current_user.id
+    @posts = Post.where(user_id: user_id)
   end
 
   def show
