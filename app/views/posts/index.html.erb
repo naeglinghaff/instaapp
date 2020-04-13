@@ -2,9 +2,16 @@
     <div class="row">
       <div class="col-8">
         <% @posts.each do |post| %>
-        <div><%= post.user.username unless post.user.blank? %></div>
+        <div class="posts-meta"><%= post.user.username unless post.user.blank? %></div>
         <%= image_tag post.image.url, class: "img img-fluid" %>
         <% end %>
         </div>
+          <div class="col-4">
+            <div class="user-profile">
+              <p><%= current_user.username %></p>
+            </div>
+            <div class="follower-suggestions">
+            </div>
+          </div>
       </div>
 </div>

@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-8">
       <% @posts.each do |post| %>
-      <div class="container-fluid"><%= post.user.username unless post.user.blank? %></div>
+      <div class="posts-meta"><%= post.user.username unless post.user.blank? %></div>
         <%= image_tag post.image.url, class: "img img-fluid" %>
       <% end %>
     </div>
