@@ -9,15 +9,20 @@
         <%= image_tag post.image.url, class: "img img-fluid" %>
 
         <div class="post-details">
+          <p><strong> <%= post.total_likes %> likes </strong></p>
+          <p><strong> <%= link_to post.user.username, profile_path(post.user.username), class: "text-dark" %> </strong></p>
           <%= simple_format post.description %>
+          <p class="text-muted"><%= time_ago_in_words post.created_at %> ago</p>
           </div>
         <% end %>
         </div>
           <div class="col-4">
             <div class="user-profile">
-              <p><%= current_user.username %></p>
+              <p><%= image_tag current_user.image.thumb.url, class: "img-circle" unless current_user.image.blank? %>
+             <%= simple_format current_user.username %></p>
             </div>
             <div class="follower-suggestions">
+              <p class="text-muted"> Suggestions for you </p>
             </div>
           </div>
       </div>
