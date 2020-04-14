@@ -3,14 +3,15 @@ class Like < ApplicationRecord
   belongs_to :user
 
 # so a user can't create multiple likes on one post
-  validates_uniqueness_of :post_id, scope: :user_id
+  validates :post_id, uniqueness: { scope: :user_id }
 
+# after creation calls on method to increase the count of a posts' likes
   after_create :increase_post_likes
 
   private
 
-  # updates the like counter on a post
+  # updates the number of total_likes for a post
   def increase_post_likes
-    Post.find(self.post_id).increment(:total_likes).save
+    Post.find(post_id).increment(:total_likes).save
   end
 end
