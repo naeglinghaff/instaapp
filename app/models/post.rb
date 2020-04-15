@@ -7,6 +7,7 @@ class Post < ApplicationRecord
 # maps relationships
   belongs_to :user
   has_many :likes
+  has_many :comments
 
 # checks a user is present
   validates :user_id, :presence => true

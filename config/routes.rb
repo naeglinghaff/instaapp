@@ -12,4 +12,5 @@ Rails.application.routes.draw do
 
   # routes for limited post methods
   resources :posts, only: [:index, :new, :create, :show]
+  resources :comments, only: [:create]
 end
