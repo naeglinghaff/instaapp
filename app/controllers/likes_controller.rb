@@ -19,6 +19,7 @@ class LikesController < ApplicationController
           @success = false
         end
       # renders the js that updates our like class - making the heart change color
+       @post_likes = Post.find(@post_id).total_likes
         render "posts/like"
       }
     end
