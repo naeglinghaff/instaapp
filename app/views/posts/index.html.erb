@@ -15,22 +15,22 @@
             <i class="fas fa-comment fa-2x post-comment"></i>
           </div>
 
-          <p id="post-<%= post.id %>-likes"><strong> <%= post.total_likes %> likes </strong></p>
-          <p id="post-<%= post.id %>-comments"><strong> <%= link_to post.user.username, profile_path(post.user.username), class: "text-dark" %> </strong></p>
-          <%= simple_format post.description %>
-          <p class="text-muted"><%= time_ago_in_words post.created_at %> ago</p>
-        </div>
+            <p id="post-<%= post.id %>-likes"><strong> <%= post.total_likes %> likes </strong></p>
+            <p id="post-<%= post.id %>-comments"><strong> <%= link_to post.user.username, profile_path(post.user.username), class: "text-dark" %> </strong></p>
+            <%= simple_format post.description %>
+            <p class="text-muted"><%= time_ago_in_words post.created_at %> ago</p>
 
-        <div class="comment-box">
-          <%= form_for @comment do |f|%>
-          <%= f.text_area :comment, placeholder: "Leave a comment..." %>
-          <%= f.hidden_field :post_id, value: post.id %>
-          <%= f.submit "Add Comment", class: "btn btn-success float-right" %>
-          <% end %>
+            <div class="comment-box">
+              <%= form_for @comment do |f|%>
+              <%= f.text_area :comment, placeholder: "Leave a comment..." %>
+              <%= f.hidden_field :post_id, value: post.id %>
+              <%= f.submit "Add Comment", class: "btn btn-success float-right" %>
+            <% end %>
+            </div>
         </div>
 
         <% end %>
-        </div>
+      </div>
 
           <div class="col-4">
             <div class="user-profile">

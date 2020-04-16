@@ -8,14 +8,6 @@ class UsersController < ApplicationController
     @posts = Post.where(user_id: user_id)
   end
 
-  def total_followers
-    0
-  end
-
-  def total_following
-    0
-  end
-
   private
 
   def set_user
