@@ -22,9 +22,11 @@
 
             <div class="comment-box">
               <%= form_for @comment do |f|%>
-              <%= f.text_area :comment, placeholder: "Leave a comment..." %>
-              <%= f.hidden_field :post_id, value: post.id %>
-              <%= f.submit "Add Comment", class: "btn btn-success float-right" %>
+              <div class="form-group">
+                <%= f.text_area :comment, placeholder: "Leave a comment..." %>
+                <%= f.hidden_field :post_id, value: post.id %>
+                <%= f.submit "Add Comment", class: "btn btn-success float-right" %>
+                </div>
             <% end %>
             </div>
         </div>
