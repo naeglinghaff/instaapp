@@ -10,9 +10,8 @@ RSpec.describe LikesController, type: :controller do
 
   describe 'save likes' do
     it 'routes a new like' do
-      post = Post.create(params)
-      get :save_likes, :post_id => 1
+      post :save_likes
       expect(response).to have_http_status(200)
     end
-end
+  end
 end

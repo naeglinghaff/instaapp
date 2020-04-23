@@ -1,6 +1,5 @@
 Instagram Challenge
 ===================
-
 ## To run code
 
 ```
@@ -36,10 +35,10 @@ Users should be able to post images, like images, comment on images and have the
 
 | Models        | Methods          | State  |
 | ------------- |:-------------:| -----:|
-| Users    | sign-up, sign-in, log-out , CRUD | email, username, password |
-| Posts     | CRUD     |   likes, associated user, caption |
-| Comments | CRUD      |    likes, associated user and post |
-
+| Users    | sign-up, sign-in, log-out , CRUD | email, username, password, profile image, profile description, website link |
+| Posts     | CRUD     |   likes, comments associated user, caption |
+| Comments | CRUD      |    associated user and post |
+| Likes | CRUD      |    associated user and post |
 
 ## Process
 
@@ -49,14 +48,20 @@ Users should be able to post images, like images, comment on images and have the
 4. Initialized a new rails project and set it up with linting gems.
 5. Created an outline feature test, pass and refactor
 
-At several points the process was derailed by styling and hiccups with bootstrap.
+At several points the process was derailed by styling and hiccups with Bootstrap.
 
 Several features were spiked.
 
 ## Mockup
 
+Some examples of a profile page and a post:
+
+### Profile Page
+
 ![Profile Desktop Page](./profile.png)
 
+### Post:
+![Example Post](./post.png)
 
 ## User Stories
 
@@ -104,9 +109,18 @@ As a user,
 so I can show appreciation for other people's posts,
 I'd like to be able to 'like' posts.
 
+As a user,
+so I can show appreciation for other people's posts,
+I'd like to be able to comment on posts.
+
 ```
 
 ## Future Additions
 
-* Follower functionality
-* Comments functionality
+* Follower functionality, tracking the number of followers on a user's profile
+* Finish comments functionality and styling
+
+## Resources
+
+* Rails documentation was really helpful throughout this whole process
+* David Battersby's video series on Youtube was great for when I got stuck: [3 Part Series Here](https://www.youtube.com/watch?v=dqjF3C9A-Yg&t=2871s)
