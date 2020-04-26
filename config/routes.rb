@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   devise_for :users
-
   # homepage route to list of all posts
   root to: "posts#index"
 

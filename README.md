@@ -44,13 +44,15 @@ Users should be able to post images, like images, comment on images and have the
 
 1. Created a series of user stories
 2. Broke them down into smaller cards, and estimated each card
-3. Created domain and database models for a rough project outline
-4. Initialized a new rails project and set it up with linting gems.
-5. Created an outline feature test, pass and refactor
+3. Created domain and database models for a rough class outline
+4. Initialised a new rails project and set it up with linting gems.
+5. Created an outline feature test, unit tests then pass and refactor
 
 At several points the process was derailed by styling and hiccups with Bootstrap.
 
-Several features were spiked.
+I employed factory bot and should matchers in my test to help improve the quality of my tests.
+
+Several features were spiked (likes and comments).
 
 ## Mockup
 
@@ -58,10 +60,10 @@ Some examples of a profile page and a post:
 
 ### Profile Page
 
-![Profile Desktop Page](./profile.png)
+![Profile Desktop Page](./public/profile.png)
 
 ### Post:
-![Example Post](./post.png)
+![Example Post](./public/post.png)
 
 ## User Stories
 
@@ -119,8 +121,9 @@ I'd like to be able to comment on posts.
 
 * Follower functionality, tracking the number of followers on a user's profile
 * Finish comments functionality and styling
+* Add more tests for controllers and unit tests for models
 
 ## Resources
 
 * Rails documentation was really helpful throughout this whole process
-* David Battersby's video series on Youtube was great for when I got stuck: [3 Part Series Here](https://www.youtube.com/watch?v=dqjF3C9A-Yg&t=2871s)
+* David Battersby's video series on Youtube was also great for when I needed direction on the design of the solution: [3 Part Series Here](https://www.youtube.com/watch?v=dqjF3C9A-Yg&t=2871s)

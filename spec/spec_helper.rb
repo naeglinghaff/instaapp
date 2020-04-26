@@ -14,7 +14,11 @@
 #
 require 'simplecov'
 require 'simplecov-console'
+require 'factory_bot_rails'
 require_relative './support/helpers.rb'
+require_relative './support/controller_macros'
+
+require_relative './factories.rb'
 
 SimpleCov.start 'rails' do
   add_filter '/bin/'
@@ -64,6 +68,7 @@ RSpec.configure do |config|
   config.shared_context_metadata_behavior = :apply_to_host_groups
   config.include Helper::SignInHelper, type: :feature
   config.include Helper::LogInHelper, type: :feature
+  config.include ControllerMacros
 
 # The settings below are suggested to provide a good initial experience
 # with RSpec, but feel free to customize to your heart's content.
