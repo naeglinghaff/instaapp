@@ -16,8 +16,6 @@ RSpec.describe Like, type: :model do
 
   describe 'after_create' do
     it 'can change a posts total likes' do
-      @user = FactoryBot.create(:user)
-      @post = FactoryBot.create(:post)
       expect { Like.new(user_id: 1, post_id: 1) }.to change { @post.total_likes }
     end
   end

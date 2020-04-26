@@ -13,6 +13,7 @@
 # it.
 #
 require 'simplecov'
+require 'database_cleaner'
 require 'simplecov-console'
 require 'factory_bot_rails'
 require_relative './support/helpers.rb'
@@ -119,4 +120,17 @@ RSpec.configure do |config|
   # as the one that triggered the failure.
   Kernel.srand config.seed
 =end
+config.before(:suite) do
+  DatabaseCleaner[:active_record].strategy = :transaction
+  DatabaseCleaner.clean_with(:truncation)
+end
+
+config.before(:each) do
+  DatabaseCleaner.start
+end
+
+config.after(:each) do
+  DatabaseCleaner.clean
+end
+
 end
