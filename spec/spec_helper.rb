@@ -19,8 +19,6 @@ require 'factory_bot_rails'
 require_relative './support/helpers.rb'
 require_relative './support/controller_macros'
 
-require_relative './factories.rb'
-
 SimpleCov.start 'rails' do
   add_filter '/bin/'
   add_filter '/db/'
