@@ -10,6 +10,15 @@ require 'rails_helper'
 #     end
 #   end
 # end
-RSpec.describe UsersHelper, type: :helper do
-  
+RSpec.describe PostsHelper, type: :helper do
+
+  before(:each) do
+    user = FactoryBot.create(:user)
+    allow(view).to receive(:current_user).and_return(user)
+  end
+
+  it 'returns true if user has liked post' do
+    expect(liked_by_user?(1)).to_eq(false)
+  end
+
 end
