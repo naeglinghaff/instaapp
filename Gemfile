@@ -26,7 +26,7 @@ gem 'devise', '~> 4.2'
 # gem 'image_processing', '~> 1.2'
 
 # for image processing and uploads
-gem 'carrierwave', '~> 2.0'
+gem 'carrierwave', '~> 2.1'
 # fog cloud services library
 gem 'fog-aws'
 # image resize
